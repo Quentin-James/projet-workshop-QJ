@@ -1,0 +1,298 @@
+body {
+    font-family: Arial, sans-serif;
+    background:  #FAFAFF;
+}
+
+/* Styles pour chaque bloc */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Utilisez min-height au lieu de height */
+    align-items: center;
+    justify-content: center;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Premier bloc : Image statique */
+.block1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px; /* Espacement ajouté */
+}
+
+.block1 img {
+    width: 100%;
+    height: 100%;
+    --mask: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%
+    ) 100% 50% / 100% 100% repeat-x;
+    font: 2em/1.6em Arial;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+/* Deuxième bloc : Carrousel avec flèches */
+.block2 {
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    height: 800px; /* Hauteur fixe du bloc2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0 0 300px rgba(0, 0, 0, 0.6); /* Ombre noire avec opacité de 0.6 */
+    border-radius:10px ;
+
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow-container img.active {
+    opacity: 1;
+}
+
+/* Flèches de navigation */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Troisième bloc : Texte et bouton */
+.block3 {
+    text-align: center;
+    padding: 20px;
+}
+
+.block3 p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.block3 button:hover {
+        color: #4B4B99;
+        background-color:  #FAFAFF; /* Ajout d'un fond plus clair pour mieux voir l'effet */
+}
+
+.download-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #4b4b99;
+    position: fixed;
+}
+
+#navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-family: 'Jersey 10', sans-serif;
+}
+
+#navbar li {
+    margin: 0 15px;
+
+}
+
+#navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-size: 40px;
+
+}
+
+#navbar li a:hover {
+    background-color: #007BFF;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+footer a {
+    color: #00ff99;
+    text-decoration: none;
+}
+h1, h2 {
+    color: #4B4B99;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Jersey 10', sans-serif; /* Correct usage of the font */
+    margin-top: 100px;
+}
+.bloc h2 {
+    font-size: 40px;
+    margin: 10px 0 5px 0; /* Espacement entre le titre et l'image */
+    top: -105px; /* Ajustement vertical */
+    position: relative;
+    text-align: left; /* Centrer le texte */
+    width: 100%; /* S'assurer que le texte occupe toute la largeur du bloc */
+}
+
+
+p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; /* Ajuste la largeur selon tes besoins */
+    color:#4B4B99;
+}
+.image-container {
+    display: flex;
+    justify-content: flex-end; /* Aligne les images à droite */
+    gap: 10px; /* Espace entre les images */
+}
+.image-container img {
+    width: 40px; /* Ajuste la largeur des images* /
+    height: 40px; /* Ajuste la hauteur des images */
+    object-fit: contain; /* Maintient le ratio d'aspect */
+}
+
+/* Style pour chaque bloc *//* Style pour chaque bloc *//* Style pour chaque bloc */
+/* Style pour la div center */
+.center {
+    display: flex; /* Utiliser Flexbox pour la mise en page des blocs */
+    flex-wrap: wrap; /* Permet aux blocs de se déplacer à la ligne suivante */
+    justify-content: center; /* Centre les blocs horizontalement */
+    align-items: center; /* Centre les blocs verticalement */
+    gap: 20px; /* Espace entre les blocs */
+    max-width: 100%; /* Assure que la div ne dépasse pas la largeur de l'écran */
+}
+
+/* Style pour chaque bloc *//* Styles pour les liens des blocs */
+/* Styles pour le conteneur principal */
+.center {
+    display: flex; /* Utiliser Flexbox pour la mise en page */
+    flex-wrap: wrap; /* Permet aux blocs de passer à la ligne suivante */
+    justify-content: center; /* Centre les blocs horizontalement */
+    align-items: center; /* Centre les blocs verticalement */
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    padding: 20px; /* Espace autour du conteneur principal */
+}
+
+/* Styles pour les liens des blocs */
+.bloc-link {
+    display: block; /* Permet au lien de se comporter comme un bloc */
+    text-decoration: none; /* Supprime la décoration de texte par défaut des liens */
+    color: inherit; /* Hérite des couleurs du texte à l'intérieur du bloc */
+    width: 30%; /* Assure que le lien couvre toute la largeur du bloc */
+    height: 50%; /* Assure que le lien couvre toute la hauteur du bloc */
+}
+
+/* Style pour chaque bloc */
+.bloc {
+    border: 1px solid #ddd; /* Bordure légère et plus subtile */
+    border-radius: 12px; /* Coins arrondis plus prononcés */
+    padding: 20px; /* Espace intérieur plus généreux */
+    background-color: #fff; /* Couleur de fond blanche pour un contraste plus fort */
+    display: flex; /* Utiliser Flexbox pour l'alignement */
+    flex-direction: row; /* Dispose les éléments horizontalement (image à gauche, texte à droite) */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: left; /* Aligne le texte à gauche */
+    width: 250px; /* Largeur fixe du bloc */
+    height: 350px; /* Hauteur fixe du bloc */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur et la hauteur totales */
+    background: linear-gradient(to bottom, #f9f9f9, #fff); /* Dégradé de fond pour un effet plus dynamique */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée douce pour un effet d'élévation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation douce pour les effets de survol */
+    flex: 1 1 calc(50% - 40px); /* Largeur ajustée pour deux blocs par ligne en prenant en compte le gap */
+    max-width: calc(50% - 40px); /* Largeur maximale pour deux blocs par ligne */
+}
+
+.bloc:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre portée plus marquée au survol */
+}
+
+/* Style pour les images à l'intérieur du bloc */
+.bloc img {
+    max-width: 300px; /* Limite la largeur de l'image */
+    max-height: 300px; /* Limite la hauteur de l'image */
+    height: auto; /* Conserve les proportions de l'image */
+    border-radius: 8px; /* Coins arrondis pour les images */
+    margin-right: 15px; /* Espace à droite de l'image pour séparer le texte */
+    object-fit: cover; /* Assure que l'image couvre l'espace sans distorsion */
+}
+
+/* Style pour les paragraphes à l'intérieur du bloc */
+.bloc p {
+    margin: 0; /* Élimine les marges par défaut du paragraphe */
+    font-size: 25px; /* Taille de la police augmentée pour une meilleure lisibilité */
+    color: #444; /* Couleur du texte légèrement plus sombre */
+    font-weight: bold; /* Texte en gras pour mettre en avant le contenu */
+    flex: 1; /* Permet au paragraphe de prendre l'espace restant à droite de l'image */
+    position: relative;
+    text-align: -moz-left;
+    top: -100px;
+
+}
+
