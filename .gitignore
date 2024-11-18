@@ -1,3 +1,6 @@
 
-..gitignore.swp
-.vscode
+# Ignorer les fichiers spécifiques aux éditeurs
+.vscode/
+*.swp
+
+# Ajoutez d'autres exclusions nécessaires ici
